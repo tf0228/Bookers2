@@ -3,10 +3,14 @@
     <nav class="nav navbar-nav navbar-left"><span>Bookers</span></nav>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Home', root_path, class: "glyphicon glyphicon-home home" %></li>
-        <li><%= link_to 'About', 'home/about', class: "glyphicon glyphicon-link about" %></li>
-        <li><a class="glyphicon glyphicon-edit sign_up" href="#">sign up</a></li>
-        <li><a class="glyphicon glyphicon-log-in sign_in" href="#">login</a></li>
+        <% if current_user %>
+          <li><%= link_to 'logout', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Home', root_path, class: "glyphicon glyphicon-home home" %></li>
+          <li><%= link_to 'About', '/home/about', class: "glyphicon glyphicon-link about" %></li>
+          <li><%= link_to 'sign up', new_user_registration_path, class: "glyphicon glyphicon-edit sign_up" %></li>
+          <li><%= link_to 'login', new_user_session_path, class: "glyphicon glyphicon-log-in sign_in" %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
