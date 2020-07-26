@@ -1,0 +1,29 @@
+/*
+require_tree .
+require_self
+*/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.body {
+  margin-top: 51px;
+}
+
+header {
+  color: white;
+}
+
+header .navbar-left span {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+a:visited {
+  color: #666;
+}
